@@ -6,7 +6,8 @@ window = Tk()
 window.title("Face Recognition")
 
 def train():
-	pass
+	traindata.train()
+
 
 def detect():
 	facedetection.detect()
