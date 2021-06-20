@@ -9,8 +9,7 @@ def train():
 	pass
 
 def detect():
-	pass
-
+	facedetection.detect()
 
 Button(text = "TRAIN DATA", font = ("", 40, BOLD), command = train).pack()
 Button(text = "RECOGNIZE", font = ("", 40, BOLD), command = detect).pack()

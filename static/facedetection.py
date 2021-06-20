@@ -1,8 +1,9 @@
 import numpy as np
 import cv2
+faceCascade = cv2.CascadeClassifier('assets/haarcascade_frontalface_default.xml')
 
 def detect():
-    faceCascade = cv2.CascadeClassifier('assets/haarcascade_frontalface_default.xml')
+    
 
     capture = cv2.VideoCapture(0)
     capture.set(3,640) # set Width
