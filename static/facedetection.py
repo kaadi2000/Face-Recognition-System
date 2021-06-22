@@ -3,10 +3,12 @@ import cv2
 faceCascade = cv2.CascadeClassifier('assets/haarcascade_frontalface_default.xml')
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('trainer/trained.yml')
+
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 def detect():
+    recognizer.read('trainer/trained.yml')
+    
     cam = cv2.VideoCapture(0)
     cam.set(3, 640) # set video widht
     cam.set(4, 480) # set video height
