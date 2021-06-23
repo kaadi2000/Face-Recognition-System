@@ -49,7 +49,7 @@ def camera(id):
         for (x,y,w,h) in faces:
             cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)     
             count += 1
-            cv2.imwrite("trainer/cache/user." + str(id) + '.' + str(count) + ".jpg", img[y:y+h,x:x+w])
+            cv2.imwrite("trainer/cache/user." + str(id) + '.' + str(count) + ".jpg", img)
 
         cv2.imshow('Train', img)
 
@@ -81,6 +81,9 @@ def camera(id):
     face_array, ids = getImagesAndLabels("trainer/cache")
     recognizer.train(face_array, numpy.array(ids))
     recognizer.write('trainer/trained.yml')
+
+    for f in os.listdir('trainer/cache'):
+        os.remove(os.path.join('trainer/cache', f))
 
 
 def train():
